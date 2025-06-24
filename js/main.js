@@ -23,10 +23,10 @@ $(function () {
 
   $('.testimonials__slider').slick({
     arrows: false,
-    // dots: true,
-    infinite: true,
-    draggable: false,
+    dots: true,
     waitForAnimate: false,
+    draggable: false,
+    appendDots: ('.testimonials__dots')
   })
   $('.testimonials__prev').on('click', function (e) {
     e.preventDefault()

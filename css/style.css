@@ -102,6 +102,10 @@ html, body {
   padding-bottom: 195px;
 }
 
+.main__companies {
+  padding-bottom: 177px;
+}
+
 /* _________________________________________________________________ */
 
 .header {
@@ -639,7 +643,7 @@ html, body {
 
 
 .team {
-  background: url(../images/decor/team-bg.svg) 210px 160px no-repeat, #F4F5F6;
+  background: url(../images/decor/team-bg.svg) calc(50% + 90px) calc(50% + -30px) no-repeat, #F4F5F6;
 }
 
 .team__inner {}
@@ -792,11 +796,26 @@ html, body {
 
 .testimonials {
   background: #F4F5F6;
+  position: relative;
+}
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-48.7%,-56.2%);
+  background: url('../images/decor/testi-bg.svg') 0 0 / 100% no-repeat;
+  width: 1845px;
+  height: 816px;
 }
 
 .container {}
 
-.testimonials__inner {}
+.testimonials__inner {
+  position: relative;
+  z-index: 1;
+}
 
 .testimonials__heading {
   margin-bottom: 60px;
@@ -927,12 +946,93 @@ html, body {
   transition: fill .3s;
 }
 
+.testimonials__arrow:hover path {
+  fill: #fff;
+}
+
 .testimonials__prev:hover::before {
   transform: translate(-50%, -50%) scale(1);
 }
 
 .testimonials__next:hover::before {
   transform: translate(50%, -50%) scale(1);
+}
+
+
+.testimonials__dots .slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials__dots li {
+  margin-top: 60px;
+  margin-right: 12px;
+}
+
+.testimonials__dots li:last-child {
+  margin-right: 0;
+}
+
+.testimonials__dots .slick-active {}
+
+.testimonials__dots button {
+  font-size: 0;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+
+.testimonials__dots button::before {
+  content: "";
+  height: 3px;
+  width: 100%;
+  background: #B3B7BC;
+  border-radius: 3px;
+}
+
+.testimonials__dots .slick-active button::before {
+  background: #424551;
+  transition: background .3s;
+}
+
+/* ====================================================================== */
+
+
+.companies {
+  background: #F4F5F6;
+}
+.companies__inner {
+}
+.companies__heading {
+  margin-bottom: 60px;
+}
+.companies__grid {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(6, 1fr);
+  gap: 40px 100px;
+}
+.companies__grid-item {
+}
+.companies__grid-link {
+  display: block;
+}
+.companies__grid-link img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+  opacity: .4;
+  transition: filter .7s, opacity .7s;
+}
+.companies__grid-link:hover img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(0);
+  opacity: 1;
+  transition: filter .3s, opacity .3s;
 }
 
 /* ===========================MEDIA====================================== */
